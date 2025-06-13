@@ -1,10 +1,12 @@
 
+import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import AddProjectModal from "./AddProjectModal";
 
 const Projects = () => {
-  const projects = [
+  const [projects, setProjects] = useState([
     {
       title: "E-Commerce Analytics Dashboard",
       description: "A comprehensive dashboard for analyzing e-commerce metrics with real-time data visualization and predictive analytics.",
@@ -53,64 +55,95 @@ const Projects = () => {
       demoUrl: "#",
       githubUrl: "#"
     }
-  ];
+  ]);
+
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
+  const handleAddProject = (newProject: any) => {
+    const projectWithDefaults = {
+      ...newProject,
+      image: newProject.image || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      demoUrl: newProject.demoUrl || "#",
+      githubUrl: newProject.githubUrl || "#"
+    };
+    setProjects([projectWithDefaults, ...projects]);
+  };
 
   return (
-    <section id="projects" className="py-20 px-4 bg-muted/50">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects showcasing my skills in web development, data science, and problem-solving.
-          </p>
-        </div>
+    <>
+      <section i
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="flex gap-4">
-                    <Button size="sm" variant="secondary">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo
-                    </Button>
-                    <Button size="sm" variant="outline">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </Button>
+        className="py-20 px-4 bg-muted/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              A collection of projects showcasing my skills in web development, data science, and problem-solving.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="relative overflow-hidden rounded-t-lg">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="flex gap-4">
+                      {project.demoUrl && project.demoUrl !== "#" && (
+                        <Button size="sm" variant="secondary" asChild>
+                          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Demo
+                          </a>
+                        </Button>
+                      )}
+                      {project.githubUrl && project.githubUrl !== "#" && (
+                        <Button size="sm" variant="outline" asChild>
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4 mr-2" />
+                            Code
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span 
-                      key={tech}
-                      className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                
+                <CardHeader>
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <AddProjectModal
+        isOpen={isAddModalOpen}
+        onClose={() => setIsAddModalOpen(false)}
+        onAdd={handleAddProject}
+      />
+    </>
   );
 };
 
+export { Projects };
 export default Projects;
