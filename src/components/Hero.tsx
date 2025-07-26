@@ -13,10 +13,10 @@ const Hero = () => {
       <div className="container mx-auto text-center">
         <div className="animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-            Web Developer & Data Scientist
+            Sakib Ahasan
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            I create innovative web solutions and extract meaningful insights from data to drive business growth and user engagement.
+            Mathematics Student & Aspiring Developer at Kishoreganj University, passionate about web development and data science.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button onClick={scrollToProjects} size="lg" className="group">

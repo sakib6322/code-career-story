@@ -55,15 +55,15 @@ const Contact = () => {
             <div className="space-y-4">
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-primary mr-4" />
-                <span>john.developer@email.com</span>
+                <span>sakib.ahasan@email.com</span>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-primary mr-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+8801319186322</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 text-primary mr-4" />
-                <span>San Francisco, CA</span>
+                <span>Kishoreganj, Bangladesh</span>
               </div>
             </div>
 
