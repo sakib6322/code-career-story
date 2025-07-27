@@ -59,7 +59,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-primary mr-4" />
-                <span>+8801319186322</span>
+                <span>+8801319-186322</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 text-primary mr-4" />

@@ -1,6 +1,7 @@
 
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -12,6 +13,12 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16">
       <div className="container mx-auto text-center">
         <div className="animate-fade-in">
+          <div className="flex justify-center mb-8">
+            <Avatar className="w-32 h-32 md:w-40 md:h-40">
+              <AvatarImage src="/lovable-uploads/3233ce0f-5e74-43aa-a684-0b5525c2bfb1.png" alt="Sakib Ahasan" />
+              <AvatarFallback>SA</AvatarFallback>
+            </Avatar>
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
             Sakib Ahasan
           </h1>
@@ -24,8 +31,10 @@ const Hero = () => {
               <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
             </Button>
             <div className="flex gap-4">
-              <Button variant="outline" size="icon">
-                <Github className="h-5 w-5" />
+              <Button variant="outline" size="icon" asChild>
+                <a href="https://github.com/sakib6322" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                </a>
               </Button>
               <Button variant="outline" size="icon">
                 <Linkedin className="h-5 w-5" />

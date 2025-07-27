@@ -6,39 +6,15 @@ import AddExperienceModal from "./AddExperienceModal";
 const Experience = () => {
   const [experiences, setExperiences] = useState([
     {
-      title: "Senior Full-Stack Developer",
-      company: "TechCorp Inc.",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
-      description: "Led development of scalable web applications serving 100k+ users. Implemented microservices architecture and improved system performance by 40%.",
-      achievements: [
-        "Built and deployed 5 major web applications",
-        "Mentored 3 junior developers",
-        "Reduced server costs by 30% through optimization"
-      ]
-    },
-    {
-      title: "Data Scientist",
-      company: "DataViz Solutions",
-      location: "Austin, TX",
-      period: "2020 - 2022",
-      description: "Developed machine learning models for predictive analytics and created data visualization dashboards for C-suite executives.",
-      achievements: [
-        "Improved prediction accuracy by 25%",
-        "Created 15+ interactive dashboards",
-        "Automated reporting processes saving 20 hours/week"
-      ]
-    },
-    {
-      title: "Frontend Developer",
-      company: "StartupXYZ",
+      title: "Web Developer",
+      company: "Markethia.com",
       location: "Remote",
-      period: "2019 - 2020",
-      description: "Built responsive web interfaces and collaborated with UX team to improve user engagement and conversion rates.",
+      period: "2023 - Present",
+      description: "Developing and maintaining web applications with focus on WordPress development, custom themes, and plugin development for various client projects.",
       achievements: [
-        "Increased user engagement by 35%",
-        "Implemented responsive design for mobile users",
-        "Collaborated on complete UI/UX redesign"
+        "Built custom WordPress themes and plugins",
+        "Developed responsive web applications",
+        "Implemented modern web development practices"
       ]
     }
   ]);
