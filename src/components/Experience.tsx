@@ -9,7 +9,7 @@ const Experience = () => {
       title: "Web Developer",
       company: "Markethia.com",
       location: "Remote",
-      period: "2023 - Present",
+      period: "2025 - Present",
       description: "Developing and maintaining web applications with focus on WordPress development, custom themes, and plugin development for various client projects.",
       achievements: [
         "Built custom WordPress themes and plugins",

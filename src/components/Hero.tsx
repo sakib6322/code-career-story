@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-16">
+    <section id="home" className="min-h-screen flex items-center justify-center px-1 pt-16">
       <div className="container mx-auto text-center">
         <div className="animate-fade-in">
           <div className="flex justify-center mb-8">
@@ -59,7 +59,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl">
           <div className="p-6 rounded-lg bg-card border hover:shadow-lg transition-shadow">
             <h3 className="text-xl font-semibold mb-2">Full-Stack Development</h3>
             <p className="text-muted-foreground">Building modern web applications with React, Node.js, and cloud technologies.</p>
