@@ -15,12 +15,12 @@ const Hero = () => {
         <div className="animate-fade-in">
           <div className="flex justify-center mb-8">
             <Avatar className="w-32 h-32 md:w-40 md:h-40">
-              <AvatarImage src="/lovable-uploads/3233ce0f-5e74-43aa-a684-0b5525c2bfb1.png" alt="Sakib Ahasan" />
-              <AvatarFallback>SA</AvatarFallback>
+              <AvatarImage src="/lovable-uploads/3233ce0f-5e74-43aa-a684-0b5525c2bfb1.png" alt="Nure-E-Alam Siddiqy" />
+              <AvatarFallback>NES</AvatarFallback>
             </Avatar>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-            Sakib Ahasan
+            Nure-E-Alam Siddiqy
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Mathematics Student & Aspiring Developer at Kishoreganj University, passionate about web development and data science.
